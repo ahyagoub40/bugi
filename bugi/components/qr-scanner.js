@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import QRScanner from './components/qr-scanner';
+import {Actions} from 'react-native-router-flux';
 
-export default function App() {
+const QRScanner = () => {
   return (
-    <QRScanner/>
+    <View style={styles.container}>
+      <Text>QR-Scanner</Text>
+    </View>
+
   );
 }
 
@@ -16,3 +19,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default QRScanner;
