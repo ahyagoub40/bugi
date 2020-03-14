@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+// import productsDetails from './components/products-details'
 
 export default function App() {
   return (
