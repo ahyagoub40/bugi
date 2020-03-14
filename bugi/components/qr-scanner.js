@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
 const QRScanner = () => {
   return (
     <View style={styles.container}>
       <Text>QR-Scanner</Text>
+      <Button title="Cart"/>
+      <Button title="Send"/>
     </View>
 
   );
