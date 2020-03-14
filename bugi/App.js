@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import QRScanner from './components/qr-scanner';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
 
 export default function App() {
   return (
-    <QRScanner/>
+    <NavigationContainer>
+      <QRScanner/>
+    </NavigationContainer>
   );
 }
 
