@@ -8,6 +8,10 @@ const QRScanner = () => {
       <Text>QR-Scanner</Text>
       <Button title="Cart"onPress={() => navigation.navigate('Profile', {name: 'Jane'})}/>
       <Button title="Send"onPress={() => navigation.navigate('Profile', {name: 'Jane'})}/>
+      <Button
+      title="QR-Scanner"
+      onPress={
+          () => this.props.navigation.navigate('ProductsDetails')}/>
     </View>
 
   );
