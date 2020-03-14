@@ -12,7 +12,7 @@ const ProductsDetails = ({ navigation: { navigate } }) => {
       <Button
       title="Cart"
       onPress={
-          () => navigate('QRScanner')}/>
+          () => navigate('Cart')}/>
     </View>
   );
 }

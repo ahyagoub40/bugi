@@ -3,10 +3,10 @@ import { StyleSheet, Text, View, Button } from "react-native";
 import { Actions } from "react-native-router-flux";
 import { navigation } from "@react-navigation/stack";
 
-const QRScanner = ({ navigation: { navigate } }) => {
+const Cart = ({ navigation: { navigate } }) => {
   return (
     <View style={styles.container}>
-      <Button title="QR-Scanner" onPress={() => navigate("ProductsDetails")} />
+      <Button title="Cart" onPress={() => navigate("QRScanner")} />
     </View>
   );
 };
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default QRScanner;
+export default Cart;
