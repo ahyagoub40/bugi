@@ -1,18 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import {Actions} from 'react-native-router-flux';
-
-const ProductsDetails = () => {
+import { navigation } from '@react-navigation/stack';
+const ProductsDetails = ({ navigation: { navigate } }) => {
   return (
     <View style={styles.container}>
       <Button
       title="Continue shopping"
       onPress={
-          () => this.props.navigation.navigate('QRScanner')}/>
+          () => navigate('QRScanner')}/>
       <Button
       title="Cart"
       onPress={
-          () => this.props.navigation.navigate('')}/>
+          () => navigate('QRScanner')}/>
     </View>
   );
 }
