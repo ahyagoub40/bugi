@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import {Actions} from 'react-native-router-flux';
+import { navigation } from '@react-navigation/stack';
 
-const QRScanner = () => {
+const QRScanner = ({ navigation: { navigate } }) => {
   return (
     <View style={styles.container}>
       <Text>QR-Scanner</Text>
@@ -11,7 +12,9 @@ const QRScanner = () => {
       <Button
       title="QR-Scanner"
       onPress={
-          () => this.props.navigation.navigate('ProductsDetails')}/>
+          () => navigate('ProductsDetails')
+          
+          }/>
     </View>
 
   );
