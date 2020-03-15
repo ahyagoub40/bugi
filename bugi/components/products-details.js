@@ -5,6 +5,7 @@ import { navigation } from '@react-navigation/stack';
 const ProductsDetails = ({ navigation: { navigate } }) => {
   return (
     <View style={styles.container}>
+      <Text>Product Details</Text>
       <Button
       title="Continue shopping"
       onPress={
