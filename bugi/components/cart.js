@@ -1,13 +1,18 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
-import { Actions } from "react-native-router-flux";
-import { navigation } from "@react-navigation/stack";
-
+import ButtonWithBackground from "../components/ButtonWithBackground";
+import Tables from "../components/tables";
 const Cart = ({ navigation: { navigate } }) => {
   return (
+    [  <Tables />,
     <View style={styles.container}>
-      <Button title="Cart" onPress={() => navigate("QRScanner")} />
-    </View>
+      <Button title="Continue Scanning" onPress={() => navigate("QRScanner")} />
+      <ButtonWithBackground
+        text="Pay Now"
+        color="#2C7873"
+        onPress={() => navigate("QRScanner")}
+      />
+    </View>]
   );
 };
 
