@@ -1,6 +1,7 @@
 node_modules/**/*
 ios/pods/**/*
 .expo/*
+.env
 npm-debug.*
 *.jks
 *.p8
