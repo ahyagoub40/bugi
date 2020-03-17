@@ -1,8 +1,9 @@
 import React, { useState, useEffect, Component } from 'react';
 import { Text, TextInput, View, StyleSheet, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import { navigation } from "@react-navigation/stack";
 
-export default function App() {
+export default function App({ navigation: { navigate } }) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
 
@@ -15,7 +16,9 @@ export default function App() {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    navigate("ProductsDetails");
+    
+    // alert(`Bar code with type ${type} and data ${data} has been scanned!`);
   };
 
   if (hasPermission === null) {
@@ -35,7 +38,11 @@ export default function App() {
       }}>
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-        style={StyleSheet.absoluteFillObject}
+        // style={StyleSheet.absoluteFillObject}
+        style={{
+          height: '60%',
+          width: '100%'
+        }}
       />
       <TextInput
           style={{
@@ -50,8 +57,7 @@ export default function App() {
             alignItems: 'center'
           }}
       title="submit"
-      onPress={
-          () => navigate('QRScanner')}/>
+      onPress={() => navigate("ProductsDetails")}/>
 
       {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
     </View>
