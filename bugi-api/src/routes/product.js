@@ -5,7 +5,7 @@ module.exports = db => {
   router.get("/product-details", (request, response) => {
     db.query(`SELECT name, picture, description FROM products;`)
       .then(({ rows: getProduct }) => {
-        response.json(getProduct);
+        response.json(getProduct[0]);
       });
   });
 
