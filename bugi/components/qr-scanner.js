@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import React, { useState, useEffect, Component } from 'react';
+import { Text, TextInput, View, StyleSheet, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
 export default function App() {
@@ -28,14 +28,30 @@ export default function App() {
   return (
     <View
       style={{
+        display: 'flex',
         flex: 1,
         flexDirection: 'column',
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-start'
       }}>
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={StyleSheet.absoluteFillObject}
       />
+      <TextInput
+          style={{
+            alignSelf: 'center'}}
+          placeholder="Enter barcode"
+        />
+              <Button
+          style={{
+            padding: 16,
+            width: 200,
+            borderRadius: 24,
+            alignItems: 'center'
+          }}
+      title="submit"
+      onPress={
+          () => navigate('QRScanner')}/>
 
       {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
     </View>
